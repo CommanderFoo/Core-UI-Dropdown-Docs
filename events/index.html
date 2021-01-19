@@ -423,7 +423,9 @@
 <p>So for example if you have a Weapons Dropdown and you set the <code>event</code> property to <code>weapons</code>, then your event will be like so.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_weapons_selected&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_weapons_selected&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_weapons_focused&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">())</span>
 <span class="n">Events</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="s2">&quot;on_weapons_enable&quot;</span><span class="p">)</span>
 <span class="n">Events</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="s2">&quot;on_weapons_disable&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -432,7 +434,9 @@
 <p>Otherwise if you don't set an event, then they will be called using <code>dropdown</code> instead.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_dropdown_selected&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_dropdown_selected&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="n">Events</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;on_dropdown_focused&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">())</span>
 <span class="n">Events</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="s2">&quot;on_dropdown_enable&quot;</span><span class="p">)</span>
 <span class="n">Events</span><span class="p">.</span><span class="n">Broadcast</span><span class="p">(</span><span class="s2">&quot;on_dropdown_disable&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -449,8 +453,13 @@
 <tbody>
 <tr>
 <td><code>on_dropdown_selected</code></td>
-<td>Event<index, UIButton, value></td>
+<td>Event&lt;index, UIButton, value&gt;</td>
 <td>Fires when an option in the dropdown has been selected.  The <code>value</code> is the option property setup by you or it is <code>nil</code>.</td>
+</tr>
+<tr>
+<td><code>on_dropdown_focused</code></td>
+<td>None</td>
+<td>Fires when an the drop down is clicked on.  Handy if you need to bring the drop down to the front of your UI when the player clicks on it.</td>
 </tr>
 </tbody>
 </table>
