@@ -1,16 +1,3 @@
-# Example
-
-The `UI Dropdown` component comes with a working example that shows you a simple setup along with an example of how to use the events system.
-
-Drag and drop the `UI Dropdown Example` template into your hierarchy.  This example already has a client context and UI container setup.
-
-Enter play mode and test the 2 drop downs.
-
-![](images/preview.png)
-
-## Example Script
-
-```lua
 -- Text UI components to show what was picked
 
 local fruit_text = script:GetCustomProperty("fruit_text"):WaitForObject()
@@ -47,4 +34,3 @@ Game.playerJoinedEvent:Connect(function()
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 end)
-```
